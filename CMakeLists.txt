@@ -20,6 +20,6 @@ file(GLOB_RECURSE PROJECT_SOURCES
     src/*.c
 )
 
-add_library(${PROJECT_NAME} SHARED ${PROJECT_SOURCES})
+add_library(${PROJECT_NAME} ${PROJECT_SOURCES})
 
 include_directories(include/)
