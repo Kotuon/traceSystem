@@ -1,0 +1,3 @@
+C:/Users/Kelson/Documents/Projects/traceSystem/build/CMakeFiles/traceSystem.dir
+C:/Users/Kelson/Documents/Projects/traceSystem/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Kelson/Documents/Projects/traceSystem/build/CMakeFiles/ZERO_CHECK.dir
