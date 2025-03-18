@@ -1,24 +1,34 @@
+/**
+ *
+ * @file trace.hpp
+ * @author Kelson Wysocki (kelson.wysocki@gmail.com)
+ * @brief
+ * @date 2025-03-17
+ *
+ */
 
 #ifndef TRACE_HPP
 #define TRACE_HPP
 #pragma once
-
-#define FILENAME __FILE__
-#define LINENUMBER __LINE__
 
 // std includes //
 #include <string>
 #include <fstream>
 #include <source_location>
 
-/*! Trace class */
+/**
+ * @brief Allows tracing messages. Sends them to a log file in folder with exe
+ *        and to std::out. Includes file name and line trace message is from.
+ *
+ */
 class Trace {
 public:
     /**
-     * @brief Prints a message into the output file
+     * @brief Prints a message into the output file including file name and line
+     *        number.
      *
      * @param message Message to be printed
-     * @param src Source location information
+     * @param src Source location information (file name, line number, etc.)
      * @return void
      */
     static void
@@ -39,17 +49,24 @@ private:
     Trace();
 
     /**
+     * @brief Construct a new Trace object
+     *
+     * @param OutputFile
+     */
+    Trace( const std::string& OutputFile );
+
+    /**
      * @brief Get the instance of trace
      *
      * @return Trace&
      */
     static Trace& getInstance() {
-        static Trace TraceInstance;
-        return TraceInstance;
+        static Trace traceInstance;
+        return traceInstance;
     }
 
 private:
-    std::fstream TraceStream; //!< Output file
+    std::fstream traceStream; //!< Output file
 };
 
 #endif

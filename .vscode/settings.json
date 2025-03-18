@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "source_location": "cpp",
+        "iostream": "cpp",
+        "fstream": "cpp",
+        "iosfwd": "cpp"
+    }
+}
