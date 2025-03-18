@@ -1,4 +1,11 @@
-
+/**
+ * 
+ * @file trace.cpp
+ * @author Kelson Wysocki (kelson.wysocki@gmail.com)
+ * @brief 
+ * @date 2025-03-18
+ * 
+ */
 
 // std includes //
 #include <iostream>
@@ -6,6 +13,10 @@
 
 #include "trace.hpp"
 
+/**
+ * @brief Construct a new Trace:: Trace object
+ * 
+ */
 Trace::Trace() {
     traceStream.open( "trace.log", std::ofstream::out );
     if ( !traceStream ) std::cout << "Trace file wasn't opened successfully.\n";
@@ -16,6 +27,11 @@ Trace::Trace() {
               << "Trace file was opened successfully.\n";
 }
 
+/**
+ * @brief Construct a new Trace:: Trace object
+ * 
+ * @param OutputFile 
+ */
 Trace::Trace( const std::string& OutputFile ) {
     traceStream.open( OutputFile, std::ofstream::out );
     if ( !traceStream ) std::cout << "Trace file wasn't opened successfully.\n";
@@ -26,6 +42,12 @@ Trace::Trace( const std::string& OutputFile ) {
               << "Trace file was opened successfully.\n";
 }
 
+/**
+ * @brief 
+ * 
+ * @param Message 
+ * @param Src 
+ */
 void Trace::message( std::string Message, std::source_location Src ) {
     Trace& TraceInstance = Trace::getInstance();
     if ( !TraceInstance.traceStream ) return;
